@@ -27,7 +27,6 @@
         <link rel="stylesheet" href="css/animate.min.css">
         <link rel="stylesheet" href="css/owl.carousel.css">
         <link rel="stylesheet" href="css/owl.theme.css">
-        
         <link rel="stylesheet" href="css/main.css">
 
 
@@ -87,11 +86,11 @@
         <!-- FULLSCREEN SLIDER -->
         <div id="slides">
             <ul class="slides-container">
-                {% for banner in [ 'map-digital', 'candy', 'main', 'ham', 'sea-food', 'flowers'] %}
+                {% for banner in [ 'research-banner', 'map-digital', 'candy', 'main', 'ham', 'sea-food', 'flowers'] %}
                 <li>
                 	<img style="opacity: 0.3;" src="img/{{banner}}.jpg" alt="">
                     <div class="container text-center">
-                        <h1 style="color: black;" class="uppercase">{{title}}</h1>
+                        <h1 style="color: black;" class="uppercase">Open Governance &amp; Civic Technology Research Repository</h1>
 						<p style="color: black;" class="lead">Curating and Designing Research on Solving Public Problems Differently</p>
                         {# <a class="button button-big button-border-light" href="#">buy now</a> #}
                     </div>
@@ -509,8 +508,9 @@
             </div>
         </section>
 #}
-        
-        <!-- WORKS -->
+
+
+        <!-- Repository -->
         <section id="repository">
         	<div class="container">
             	<div class="row">
@@ -546,7 +546,7 @@
                                 <li class="cbp-item {{p['__tags__']|join(' ')}}">
                                     <div class="cbp-caption">
                                         <div class="cbp-caption-defaultWrap">
-                                            <img src="img/report-icon.png" alt="" width="100%">
+                                            <img src="img/covers/{{p.cover}}" alt="" width="100%">
                                         </div>
                                         <div class="cbp-caption-activeWrap">
                                             <div class="cbp-l-caption-alignCenter">
@@ -565,6 +565,36 @@
 
                             </ul>
                         </div>
+
+
+        <section id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="uppercase">Blog</h2>
+                    </div>
+                    <div class="wrapper">
+                    </div>
+                </div>
+                <div id="blog-container"/>
+            </div>
+        </section>
+
+
+        <section id="digest">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="uppercase">GovLab Digest</h2>
+                    </div>
+                    <div class="wrapper">
+                    </div>
+                </div>
+                <div id="digest-container"/>
+            </div>
+        </section>
+        
+
 {#
                         <div class="cbp-l-loadMore-button">
                             <a href="ajax/loadMore.html" class="cbp-l-loadMore-button-link">LOAD MORE</a>
@@ -631,9 +661,28 @@
         <script src="js/jquery.stellar.min.js"></script>
         <script src="js/smooth-scroll.js"></script>
         <script src="js/retina-1.1.0.min.js"></script>
+        <script src="js/jquery.zrssfeed.min.js"></script>
         
         <script src="js/main.js"></script>
         
+        <script>
+        jQuery(document).ready(function($) {
+
+            // RSS from Digest
+            $('#digest-container').rssfeed('http://thegovlab.org/govlab-digest/feed/', 
+                { 
+                    limit: 5,
+                    linktarget: '_blank'
+                });
+
+            // RSS from Blog
+            $('#blog-container').rssfeed('http://sahuguet.com/GovLab/Research/andrew-blog-rss.xml', 
+                { 
+                    limit: 5,
+                    linktarget: '_blank'
+                });
+        });
+        </script>
       	
         <!-- GOOGLE ANALYTICS 
         <script>

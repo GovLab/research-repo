@@ -10,13 +10,12 @@ TEMPLATES_DIR = 'templates'
 
 PUBLICATIONS = yaml.load(open('data/publications.yaml'))
 
-print PUBLICATIONS
-
 mySlug = lambda x:slugify(x, separator='_', to_lower=True)
 
 tagFilters = {}
 
-for case in PUBLICATIONS:
+for index, case in enumerate(PUBLICATIONS):
+	case['cover'] = "%02d.png" % (index+1)
 	case['slug'] = mySlug(case['title'])
 	case['__tags__'] = []
 	for dim in case['tags']:
