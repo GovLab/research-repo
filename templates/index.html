@@ -517,14 +517,18 @@
                 	<div class="col-lg-12 text-center">
                     	<h2 class="uppercase">Publication Repository</h2>
                     </div>
+                    <div>
+                        <p>Browse open governance and civic technology research publications by the technological or scientific <b>innovation</b> studied, the <b>objective</b> of the innovation for improving the public good, the <b>sector</b> in which the research occurred, the specific <b>tool</b> studied, the geographic <b>region</b> in which the research occurred, the research <b>methodology</b> used by the authors and/or the <b>publication</b> type.</p>
+                    </div>
+
                 	<div class="wrapper">
 
 {% macro filterWidget(name, filterName) -%}
     <div style="margin-bottom: 0;" id="filters-container" class="filters-container cbp-l-filters-button">
-        <span style="float:left; width: 200px; margin-top: 0; font-size: 18px; line-height: 18px;">{{name}}:</span>
-        <span style="margin-top: 0; font-size: 18px; line-height: 18px;" data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</span>
+        <span style="float:left; width: 150px; margin-top: 0; font-size: 18px; line-height: 18px;">{{name}}:</span>
+        <span style="margin-top: 0; font-size: 12px; line-height: 12px;" data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</span> &mdash;
         {% for k,v in filterName|dictsort %}
-            <span style="margin-top: 0; font-size: 18px; line-height: 18px;" data-filter=".{{v}}" class="cbp-filter-item">{{k}}</span>
+            <span style="margin-top: 0; font-size: 12px; line-height: 12px; padding: 0 0 0 0;" data-filter=".{{v}}" class="cbp-filter-item">{{k}}</span> &mdash;
         {% endfor %}
     </div>
 {%- endmacro %}

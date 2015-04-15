@@ -19,11 +19,15 @@ for index, case in enumerate(PUBLICATIONS):
 	case['slug'] = mySlug(case['title'])
 	case['__tags__'] = []
 	for dim in case['tags']:
-		print dim
-		tagFilters[dim] = {}
+		if dim in tagFilters:
+			pass
+		else:
+			tagFilters[dim] = {}
 		for tag in case['tags'][dim]:
 			case['__tags__'].append(mySlug(tag))
 			tagFilters[dim][tag] = mySlug(tag)
+
+print tagFilters
 
 template_data = {
 	'title': 'Research Repository',
