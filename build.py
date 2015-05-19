@@ -67,7 +67,7 @@ for k, v in tagFilters.items():
 
 tag_mapping = {
     'topic-behavioral-science': 'Behavioral Science and Nudges',
-    'topic-citizen-engagement': 'Citizen Engagement',
+    'topic-citizen-engagement': 'Citizen Engagement and Crowdsourcing',
     'topic-civic-technology':  'Civic Technology',
     'topic-data-analysis': 'Data Analysis',
     'topic-expert-networking': 'Expert Networking',
@@ -75,15 +75,13 @@ tag_mapping = {
     'topic-opendata': 'Open Data'
 }
 
-
 def filterPublications(tag):
     # We filter by tag
-    print "Filtering by %s" % tag
     if tag not in tag_mapping:
         print "No filter"
         return PUBLICATIONS
-    print "fitering for %s" % tag_mapping[tag]
-    return [p for p in PUBLICATIONS if tag_mapping[tag] in p['tags']['innovation']]
+    filteredList = [p for p in PUBLICATIONS if tag_mapping[tag] in p['tags']['innovation']]
+    return filteredList
 
 
 def Main():
@@ -109,8 +107,9 @@ def Main():
     for page in pages:
         template = env.get_template('topic-filter-page.html')
         template_data['searchTopic'] = tag_mapping[page]
-        template_data['PUBLICATIONS'] = filterPublications(page)
-        template_data['total_publications'] = len(template_data['PUBLICATIONS'])
+        filteredPublications = filterPublications(page)
+        template_data['PUBLICATIONS'] = filteredPublications
+        template_data['total_publications'] = len(filterPublications(page))
         html = template.render(template_data)
         with open('site/%s.html' % page, 'w') as f:
             f.write(html.encode('utf8'))
@@ -118,3 +117,6 @@ def Main():
 
 if __name__ == '__main__':
   Main()
+  print 'Done'
+#  import code
+#  code.interact(local=locals())

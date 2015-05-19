@@ -11,7 +11,7 @@
 		<ul class="cbp-l-project-details-list">
 			<li><strong>By</strong> {{authors}}</li>
 			<li><strong>Published on</strong> {{date}}</li>
-			{% for dim in tags %}
+			{% for dim in ['innovation', 'sector', 'region', 'methodology' ] %}
 			<li><strong>{{dim|replace('_', ' ')|title}}</strong> {{tags[dim]|join('&nbsp;&mdash;&nbsp;')}}
 			{% endfor %}
 		</ul>
@@ -20,10 +20,10 @@
 
 	<div style="width: 50%;" class="cbp-l-project-desc">
 			<div style="min-height:300px;">
-				<img width="460" src="img/covers/{{cover}}" alt="" width="100%">
+				<img width="460" src="img/pub_covers/{{thumbnail}}" alt="" width="100%">
 			</div>
-	    <div style="margin-top: 50px;" class="cbp-l-project-desc-title"><span>Description</span></div>
-	    <div class="cbp-l-project-desc-text">{{description}}</div>
+	    <div style="margin-top: 50px;" class="cbp-l-project-desc-title"><span>Abstract</span></div>
+	    <div class="cbp-l-project-desc-text">{{abstract}}</div>
 	</div>
 
 </div>
