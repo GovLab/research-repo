@@ -1,0 +1,7 @@
+Jinja2==2.7.3
+MarkupSafe==0.23
+PyYAML==3.11
+Unidecode==0.04.17
+awesome-slugify==1.6.4
+regex==2015.03.18
+wsgiref==0.1.2
