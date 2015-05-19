@@ -21,6 +21,7 @@ with open('data/publications.csv', 'rb') as csvfile:
     next(reader, None)
 
     for item in reader:
+        # add one field called `org` before authors.
         (thumbnail, title, authors, date, url,
             innovation_tags, objective_tags, sector_tags, region_tags, methodology_tags,
             abstract) = item
@@ -30,9 +31,11 @@ with open('data/publications.csv', 'rb') as csvfile:
         region      = map(lambda x: x.strip(), region_tags.split(','))
         methodology = map(lambda x: x.strip(), methodology_tags.split(','))
         PUBLICATIONS.append({'title': title,
+            #'org': org,
             'authors': authors,
             'date': date,
             'url': url,
+            'thumbnail': thumbnail,
             'tags': {'innovation': innovation, 'objective': objective, 'sector': sector, 'region': region, 'methodology': methodology},
             'abstract': abstract})
 
@@ -108,7 +111,6 @@ def Main():
         template_data['searchTopic'] = tag_mapping[page]
         template_data['PUBLICATIONS'] = filterPublications(page)
         template_data['total_publications'] = len(template_data['PUBLICATIONS'])
-        print len(template_data['PUBLICATIONS'])
         html = template.render(template_data)
         with open('site/%s.html' % page, 'w') as f:
             f.write(html.encode('utf8'))

@@ -15,11 +15,11 @@
             <div class="collapse navbar-collapse" id="nav">
               <ul class="nav navbar-nav navbar-right uppercase">
                 <li><a data-scroll href="/">Home</a></li>
-				        <li><a data-scroll href="/about.html">About</a></li>
-                <li><a data-scroll href="/#explore">Repository</a></li>
-				        <li><a data-scroll href="/#blog">Blog</a></li>
-				        <li><a data-scroll href="/#digest">Digest</a></li>
-				        <li><a data-scroll href="/#learn-connect">Learn &amp; Connect</a></li>
+				        <li><a data-scroll href="./about.html">About</a></li>
+                <li><a data-scroll href="./#explore">Repository</a></li>
+				        <li><a data-scroll href="./#blog">Blog</a></li>
+				        <li><a data-scroll href="./#digest">Digest</a></li>
+				        <li><a data-scroll href="./#learn-connect">Learn &amp; Connect</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div>

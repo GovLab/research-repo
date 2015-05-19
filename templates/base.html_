@@ -6,6 +6,9 @@
 	<head>
         <title>{{title}}</title>
         {% include 'header.html_' %}
+        <style>
+        .navbar-custom { color: black;}
+        </style>
 	</head>
 
 	<body>

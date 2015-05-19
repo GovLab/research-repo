@@ -42,9 +42,9 @@
 
 
 {% macro topic(link, icon, name) -%}
-<div class="col-xs-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0.2s">
+<div class="col-xs-3 col-md-3 col-lg-3 wow fadeInLeft text-center" data-wow-delay="0.2s">
+    <i class="fa fa-{{icon}} fa-3x"></i><br/>
     <a href="{{link}}">
-    <i class="pe-7s-umbrella pe-4x"></i>{{icon}}
     <h3 style="font-size: 20px;" class="uppercase">{{name}}</h3>
     </a>
 </div>
@@ -57,25 +57,25 @@
                 <div class="row">
                     <div class="col-lg-12 wow fadeInDown">
                         <h2 class="uppercase">Explore by topic</h2>
-                        <p class="subhead">Data X Collaboration is an effort to ...</p>
+                        <p class="subhead"></p>
                     </div>
                 </div>
 
                 <div class="row">
 
-                    {{ topic('topic-behavioral-science.html', '', 'Behavioral Science')}}
-                    {{ topic('topic-citizen-engagement.html', '', 'Citizen Engagement')}}
-                    {{ topic('topic-civic-technology.html', '', 'Civic Technology')}}
-                    {{ topic('topic-data-analysis.html', '', 'Data Analysis')}}
+                    {{ topic('topic-behavioral-science.html', 'hand-o-right', 'Behavioral Science')}}
+                    {{ topic('topic-citizen-engagement.html', 'users', 'Citizen Engagement')}}
+                    {{ topic('topic-civic-technology.html', 'cogs   ', 'Civic Technology')}}
+                    {{ topic('topic-data-analysis.html', 'database', 'Data Analysis')}}
 
                 </div>
 
                 <div class="row">
 
-                    {{ topic('topic-expert-networking.html', '', 'Expert Networking')}}
-                    {{ topic('topic-labs.html', '', 'Labs and Experimentation')}}
-                    {{ topic('topic-opendata.html', '', 'Open Data')}}
-
+                    {{ topic('topic-expert-networking.html', 'lightbulb-o', 'Expert Networking')}}
+                    {{ topic('topic-labs.html', 'flask', 'Labs and Experimentation')}}
+                    {{ topic('topic-opendata.html', 'download', 'Open Data')}}
+                    <div class="col-xs-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0.2s">&nbsp;</div>
                 </div>
                 
                 <div class="row text-center">
@@ -122,6 +122,24 @@
             </div>
         </section>
 #}
+
+    <section id="learn-connect">
+        <div class="container">
+            <iframe id="forum_embed"
+             src="javascript:void(0)"
+             scrolling="no"
+             frameborder="0"
+             width="900"
+             height="700">
+            </iframe>
+    <script type="text/javascript">
+     document.getElementById("forum_embed").src =
+      "https://groups.google.com/forum/embed/?place=forum/opening-governance" +
+      "&showsearch=true&showpopout=true&parenturl=" +
+      encodeURIComponent(window.location.href);
+    </script>
+    </div>
+</section>
 
 
 
