@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="{{title}}">
+<meta name="author" content="themecube">
+
+<!-- viewport settings -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<link rel="stylesheet" href="css/superslides.css">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+<link rel="stylesheet" href="css/helper.css">
+<link rel="stylesheet" href="css/cubeportfolio.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/main.css">
+
+
+<!-- Font -->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Marvel:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="img/favicon.ico">

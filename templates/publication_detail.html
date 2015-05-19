@@ -9,7 +9,7 @@
 		<div class="cbp-l-project-details-title"><span>Details</span></div>
 
 		<ul class="cbp-l-project-details-list">
-			<li><strong>By</strong> {{authors|join(' ')}}</li>
+			<li><strong>By</strong> {{authors}}</li>
 			<li><strong>Published on</strong> {{date}}</li>
 			{% for dim in tags %}
 			<li><strong>{{dim|replace('_', ' ')|title}}</strong> {{tags[dim]|join('&nbsp;&mdash;&nbsp;')}}

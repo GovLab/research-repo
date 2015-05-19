@@ -1,0 +1,67 @@
+{% extends 'base.html_' %}
+
+{% block content %}
+
+<!-- Repository -->
+<section style="margin-top: 50px;" id="repository">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="uppercase">{{total_publications}} publications<br/>{{searchTopic}}</h2>
+            </div>
+            
+
+            <div class="wrapper">
+
+{% macro filterWidget(name, filterName) -%}
+    <div style="margin-bottom: 0;" id="filters-container" class="filters-container cbp-l-filters-button">
+        <span style="float:left; width: 150px; margin-top: 0; font-size: 18px; line-height: 18px;">{{name}}:</span>
+        <span style="margin-top: 0; font-size: 12px; line-height: 12px;" data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</span> &mdash;
+        {% for k,v in filterName|dictsort %}
+            <span style="margin-top: 0; font-size: 12px; line-height: 12px; padding: 0 0 0 0;" data-filter=".{{v}}" class="cbp-filter-item">{{k}}</span> &mdash;
+        {% endfor %}
+    </div>
+{%- endmacro %}
+
+            <!-- PORTOLIO FILTER -->
+            {{ filterWidget("Objective", objectiveFilters) }}
+            {{ filterWidget("Sector", sectorFilters) }}
+            {{ filterWidget("Region", regionFilters) }}
+            {{ filterWidget("Methodology", methodologyFilters) }}
+
+            <!-- PORTOLIO -->
+            <div style="margin-top: 30px;" id="grid-container" class="cbp-l-grid-projects ">
+                <ul>
+                    {% for p in PUBLICATIONS %}
+
+                    <li class="cbp-item {{p['__tags__']|join(' ')}}">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap">
+                                <img src="img/covers/{{p.cover}}" alt="" width="100%">
+                            </div>
+                            <div class="cbp-caption-activeWrap">
+                                <div class="cbp-l-caption-alignCenter">
+                                    <div class="cbp-l-caption-body">
+                                        <a href="ajax/{{p.slug}}.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="pe-3x pe-7s-plus"></i></a>
+                                        {#
+                                        <a href="img/1big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="{{p.title}}"><i class="pe-3x pe-7s-search"></i></a>
+                                        #}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cbp-l-grid-projects-title2">{{p.title}}</div>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+{% endblock %}
