@@ -215,20 +215,19 @@
                     linktarget: '_blank'
                 });
 
-            // RSS from Blog
-            $('#blog-container').rssfeed('http://sahuguet.com/GovLab/Research/andrew-blog-rss.xml',
+            // RSS from Govlab
+            $('#blog-container').rssfeed('http://thegovlab.org/researchrepo/feed/',
                 {
                     limit: 5,
                     linktarget: '_blank'
                 });
 
-            new FormRenderer({
-                "project_id": 1195,
-                "afterSubmit": {
-                "method": "page",
-                "html": "<p>Thanks for submitting our form!</p>"
-    }
-  });
+            // RSS from Blog
+            // $('#blog-container').rssfeed('http://sahuguet.com/GovLab/Research/andrew-blog-rss.xml',
+            //     {
+            //         limit: 5,
+            //         linktarget: '_blank'
+            //     });
         });
         </script>
 

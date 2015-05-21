@@ -7,18 +7,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="uppercase">{{PUBLICATIONS|length}} publications<br/>{{searchTopic}}</h2>
+                <h2 class="page-title">{{searchTopic}}</h2>
+                <h3 class="page-tagline">{{PUBLICATIONS|length}} publications</h3>
             </div>
             
 
             <div class="wrapper">
 
 {% macro filterWidget(name, filterName) -%}
-    <div style="margin-bottom: 0;" id="filters-container" class="filters-container cbp-l-filters-button">
-        <span style="float:left; width: 150px; margin-top: 0; font-size: 18px; line-height: 18px;">{{name}}:</span>
-        <span style="margin-top: 0; font-size: 12px; line-height: 12px;" data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</span> &mdash;
+    <div id="filters-container" class="filters-container cbp-l-filters-button filter-line">
+        <span>{{name}}:</span> <span data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</span>
         {% for k,v in filterName|dictsort %}
-            <span style="margin-top: 0; font-size: 12px; line-height: 12px; padding: 0 0 0 0;" data-filter=".{{v}}" class="cbp-filter-item">{{k}}</span> &mdash;
+            <span data-filter=".{{v}}" class="cbp-filter-item">{{k}}</span>
         {% endfor %}
     </div>
 {%- endmacro %}
