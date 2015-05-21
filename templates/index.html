@@ -209,12 +209,19 @@
                     linktarget: '_blank'
                 });
 
-            // RSS from Blog
-            $('#blog-container').rssfeed('http://sahuguet.com/GovLab/Research/andrew-blog-rss.xml',
+            // RSS from Govlab
+            $('#blog-container').rssfeed('http://thegovlab.org/researchrepo/feed/',
                 {
                     limit: 5,
                     linktarget: '_blank'
                 });
+
+            // RSS from Blog
+            // $('#blog-container').rssfeed('http://sahuguet.com/GovLab/Research/andrew-blog-rss.xml',
+            //     {
+            //         limit: 5,
+            //         linktarget: '_blank'
+            //     });
         });
         </script>
 

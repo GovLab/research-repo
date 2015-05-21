@@ -1,0 +1,118 @@
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
+body {
+  background-color: #fafafa !important;
+  font-family: "proxima-nova", sans-serif !important;
+  font-size: 16px !important; }
+
+h1, h2, h3, h4 {
+  font-family: "proxima-nova", sans-serif !important;
+  color: #444 !important; }
+
+a {
+  color: #472b74; }
+  a:hover {
+    background-color: #472b74;
+    color: white;
+    text-decoration: none; }
+
+.navbar {
+  background-color: #472b74;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+  font-family: 'proxima-nova', sans-serif;
+  text-transform: lowercase !important;
+  font-weight: 400; }
+
+.navbar-custom {
+  color: white !important; }
+
+.uppercase {
+  text-transform: Capitalize; }
+
+.navbar-nav > li {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease; }
+  .navbar-nav > li:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: all 0.4s ease; }
+    .navbar-nav > li:hover a {
+      color: white !important; }
+
+.top-nav-collapse {
+  color: white !important; }
+
+.navbar-brand {
+  font-family: 'proxima-nova', sans-serif !important;
+  text-transform: capitalize !important;
+  font-weight: 400;
+  width: 400px; }
+  .navbar-brand:before {
+    content: "";
+    background-image: url("../../images/govlab-logo-white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 34px;
+    margin-top: -8px;
+    margin-right: 15px;
+    display: inline-block;
+    float: left; }
+
+.b-partners {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 30px; }
+  .b-partners .e-partner-logo {
+    max-width: 200px;
+    margin: 20px 30px; }
+
+.rssFeed ul {
+  padding: 0; }
+  .rssFeed ul .rssRow {
+    list-style-type: none;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    background-color: white; }
+
+#services {
+  margin-top: 60px; }
+  #services p {
+    font-family: 'proxima-nova', sans-serif !important;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #444; }
+
+.cbp-item {
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+  .cbp-item .cbp-item-wrapper {
+    padding: 15px; }
+
+.filter-line {
+  margin-bottom: 1px;
+  height: auto; }
+  .filter-line span {
+    display: inline-block;
+    padding: 3px 6px !important;
+    font-family: 'proxima-nova', sans-serif !important;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 1.4; }
+    .filter-line span:hover {
+      background-color: #ddd; }
+  .filter-line span:first-child {
+    width: 120px; }
+
+.cbp-filter-item-active.cbp-filter-item-active.cbp-filter-item-active.cbp-filter-item-active.cbp-filter-item-active.cbp-filter-item-active {
+  background-color: #472b74 !important;
+  color: white !important;
+  font-size: 14px !important; }
+
+.page-tagline {
+  margin-bottom: 30px;
+  font-size: 22px; }
+
+/*# sourceMappingURL=styles.css.map */

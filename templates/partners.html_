@@ -1,0 +1,12 @@
+<section>
+    <div class="container">
+        <div class="row">
+        <div class="b-partners col-md-12 text-center">
+            <h2>Partners</h2>
+            <img class="e-partner-logo" src="../images/my-society.jpg" alt="My Society">
+            <img class="e-partner-logo" src="../images/worldbank.png" alt="World Bank">
+            <img class="e-partner-logo" src="../images/govlab.png" alt="The GovLab">
+            <img class="e-partner-logo" src="../images/macarthur-network-logo.png" alt="The GovLab">
+        </div>
+    </div>
+</section>
