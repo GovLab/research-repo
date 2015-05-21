@@ -4,10 +4,10 @@
         <div class="row">
         <div class="b-partners col-md-12 text-center">
             <h2>Partners</h2>
-            <img class="e-partner-logo" src="../images/govlab-logo.png" alt="The GovLab">
-            <img class="e-partner-logo" src="../images/worldbank.png" alt="World Bank">
-            <img class="e-partner-logo" src="../images/macarthur-network-logo.png" alt="MacArthur Network">
-            <img class="e-partner-logo" src="../images/my-society.jpg" alt="My Society">
+            <img class="e-partner-logo" src="img/govlab-logo.png" alt="The GovLab">
+            <img class="e-partner-logo" src="img/worldbank.png" alt="World Bank">
+            <img class="e-partner-logo" src="img/macarthur-network-logo.png" alt="MacArthur Network">
+            <img class="e-partner-logo" src="img/my-society.jpg" alt="My Society">
 
         </div>
     </div>
