@@ -6,6 +6,8 @@
 	<head>
         <title>{{title}}</title>
         {% include 'header.html_' %}
+        <link href="//d3q1ytufopwvkq.cloudfront.net/0/formrenderer.css" rel="stylesheet" />
+        <script src="//d3q1ytufopwvkq.cloudfront.net/0/formrenderer.js"></script>
 	</head>
 
 	<body>
@@ -83,6 +85,8 @@
                     <a href="/topic-filter-page.html"><h2>Explore All Topics</h2></a>
                 </div>
 
+                <form data-formrenderer>This form requires JavaScript to complete.</form>
+
 
             </div>
         </section>
@@ -126,18 +130,18 @@
     <section id="learn-connect">
         <div class="container">
             <iframe id="forum_embed"
-             src="javascript:void(0)"
-             scrolling="no"
-             frameborder="0"
-             width="900"
-             height="700">
-            </iframe>
-    <script type="text/javascript">
-     document.getElementById("forum_embed").src =
-      "https://groups.google.com/forum/embed/?place=forum/opening-governance" +
-      "&showsearch=true&showpopout=true&parenturl=" +
-      encodeURIComponent(window.location.href);
-    </script>
+  src="javascript:void(0)"
+  scrolling="no"
+  frameborder="0"
+  width="900"
+  height="700">
+</iframe>
+<script type="text/javascript">
+  document.getElementById('forum_embed').src =
+     'https://groups.google.com/a/thegovlab.org/forum/embed/?place=forum/open-gov-research-repository'
+     + '&showsearch=true&showpopout=true&showtabs=false'
+     + '&parenturl=' + encodeURIComponent(window.location.href);
+</script>
     </div>
 </section>
 
@@ -183,7 +187,7 @@
 		<!-- modernizr -->
         <script src="js/modernizr.custom.00695.js"></script>
 
-    	<script src="js/jquery-1.11.0.min.js"></script>
+    	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.superslides.min.js"></script>
@@ -196,6 +200,8 @@
         <script src="js/smooth-scroll.js"></script>
         <script src="js/retina-1.1.0.min.js"></script>
         <script src="js/jquery.zrssfeed.min.js"></script>
+        <script src="//d3q1ytufopwvkq.cloudfront.net/0/formrenderer.js"></script>
+
 
         <script src="js/main.js"></script>
 
@@ -215,8 +221,17 @@
                     limit: 5,
                     linktarget: '_blank'
                 });
+
+            new FormRenderer({
+                "project_id": 1195,
+                "afterSubmit": {
+                "method": "page",
+                "html": "<p>Thanks for submitting our form!</p>"
+    }
+  });
         });
         </script>
+
 
         <!-- GOOGLE ANALYTICS
         <script>
