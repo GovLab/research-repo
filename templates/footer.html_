@@ -1,8 +1,8 @@
 <!-- PARTNERS -->
-<section>
-    <div class="container">
+<section class="b-partners">
+    <div class=" container">
         <div class="row">
-        <div class="b-partners col-md-12 text-center">
+        <div class=" col-md-12 text-center">
             <h2>Partners</h2>
             <img class="e-partner-logo" src="img/govlab-logo.png" alt="The GovLab">
             <img class="e-partner-logo" src="img/worldbank.png" alt="World Bank">
@@ -14,7 +14,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="b-footer">
     <div class="container">
         <div class="row">
         <div class="social col-lg-12 text-center" style="position:relative;">

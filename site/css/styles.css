@@ -42,14 +42,18 @@ a {
 .top-nav-collapse {
   color: white !important; }
 
+.m-disabled {
+  opacity: .5;
+  pointer-events: none; }
+
 .navbar-brand {
   font-family: 'proxima-nova', sans-serif !important;
   text-transform: capitalize !important;
   font-weight: 400;
-  width: 400px; }
+  width: 520px; }
   .navbar-brand:before {
     content: "";
-    background-image: url("../../images/govlab-logo-white.png");
+    background-image: url("../../img/govlab-logo-white.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 120px;
@@ -60,11 +64,16 @@ a {
     float: left; }
 
 .b-partners {
+  background-color: #FFF;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
-  padding-top: 30px; }
+  padding: 30px; }
   .b-partners .e-partner-logo {
     max-width: 200px;
     margin: 20px 30px; }
+
+.b-footer {
+  margin-top: 0 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); }
 
 .rssFeed ul {
   padding: 0; }
@@ -114,5 +123,40 @@ a {
 .page-tagline {
   margin-bottom: 30px;
   font-size: 22px; }
+
+.b-topic-icon a {
+  width: 100%;
+  padding: 15px;
+  background-color: transparent;
+  color: #472b74; }
+  .b-topic-icon a h3 {
+    color: #472b74; }
+.b-topic-icon a:hover {
+  background-color: #472b74;
+  color: white; }
+  .b-topic-icon a:hover h3 {
+    color: white !important; }
+
+.b-section-title {
+  text-align: center; }
+
+.rssFeed a:hover {
+  background-color: transparent !important;
+  text-decoration: underline;
+  color: #472b74; }
+
+.b-submit-pub {
+  padding: 10px 15px;
+  background-color: #472b74;
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  border: 1px solid #472b74;
+  margin-top: 40px; }
+
+.b-submit-pub:hover {
+  border: 1px solid #472b74;
+  color: #472b74;
+  background-color: #FFF; }
 
 /*# sourceMappingURL=styles.css.map */

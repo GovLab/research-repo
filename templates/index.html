@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-        <title>{{title}}</title>
+        <title>{{title}} - Alpha</title>
         {% include 'header.html_' %}
         <link href="//d3q1ytufopwvkq.cloudfront.net/0/formrenderer.css" rel="stylesheet" />
         <script src="//d3q1ytufopwvkq.cloudfront.net/0/formrenderer.js"></script>
@@ -44,9 +44,9 @@
 
 
 {% macro topic(link, icon, name) -%}
-<div class="col-xs-3 col-md-3 col-lg-3 wow fadeInLeft text-center" data-wow-delay="0.2s">
-    <i class="fa fa-{{icon}} fa-3x"></i><br/>
+<div class="col-md-3 wow fadeInLeft text-center b-topic-icon" data-wow-delay="0.2s">
     <a href="{{link}}">
+    <i class="fa fa-{{icon}} fa-3x"></i><br/>
     <h3 style="font-size: 20px;" class="uppercase">{{name}}</h3>
     </a>
 </div>
@@ -58,34 +58,39 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 wow fadeInDown">
-                        <h2 class="uppercase">Explore by topic</h2>
+                        <h2 class="b-section-title">Explore by topic</h2>
                         <p class="subhead"></p>
                     </div>
                 </div>
 
                 <div class="row">
-
+                    {{ topic('topic-filter-page.html', 'asterisk', 'All')}}
                     {{ topic('topic-behavioral-science.html', 'hand-o-right', 'Behavioral Science')}}
                     {{ topic('topic-citizen-engagement.html', 'users', 'Citizen Engagement')}}
                     {{ topic('topic-civic-technology.html', 'cogs   ', 'Civic Technology')}}
-                    {{ topic('topic-data-analysis.html', 'database', 'Data Analysis')}}
+                    
 
                 </div>
 
                 <div class="row">
-
+                    {{ topic('topic-data-analysis.html', 'database', 'Data Analysis')}}
                     {{ topic('topic-expert-networking.html', 'lightbulb-o', 'Expert Networking')}}
                     {{ topic('topic-labs.html', 'flask', 'Labs and Experimentation')}}
                     {{ topic('topic-opendata.html', 'download', 'Open Data')}}
                     <div class="col-xs-3 col-md-3 col-lg-3 wow fadeInLeft" data-wow-delay="0.2s">&nbsp;</div>
                 </div>
                 
-                <div class="row text-center">
+<!--                 <div class="row text-center">
                     <br/>
                     <a href="topic-filter-page.html"><h2>Explore All Topics</h2></a>
                 </div>
 
-                <form data-formrenderer>This form requires JavaScript to complete.</form>
+                <form data-formrenderer>This form requires JavaScript to complete.</form> -->
+                <div class="row text-center">
+                    <a class="b-submit-pub" href="https://docs.google.com/forms/d/1dzN4G-rj2p9Q8NZut_gdi6c4vOFlAe5h6x3AU7V1az8/viewform">Submit your publication</a>
+                </div>
+
+                <!-- <form data-formrenderer>This form requires JavaScript to complete.</form> -->
 
 
             </div>
