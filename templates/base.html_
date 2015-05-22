@@ -39,7 +39,7 @@
         <script src="js/jquery.countTo.js"></script>
         <script src="js/jquery.stellar.min.js"></script>
         <script src="js/smooth-scroll.js"></script>
-        <script src="js/retina-1.1.0.min.js"></script>
+        <script src2="js/retina-1.1.0.min.js"></script>
         <script src="js/jquery.zrssfeed.min.js"></script>
 
         <script src="js/main.js"></script>

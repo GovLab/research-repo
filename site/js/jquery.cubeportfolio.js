@@ -3209,14 +3209,20 @@
             var t = this;
 
             // We grab the text for the fulltext filter.
-            var text_filter = document.getElementById('text-filter').value;
+            var text_filter = document.getElementById('text-filter').value.toLowerCase();
+            
+            // AND logic means [expr][expr]; OR logic means [expr], [expr] for jQuery.
+            var QUERY_LOGIC = $('#text-logic').prop('checked') ? '': ', ';
+
             if (text_filter !== '') {
-                text_filter = '[data-fulltext*="' + text_filter + '"]';
+                var tokens = text_filter.split(' ');
+                text_filter = jQuery.map(tokens, function(elem, index) {
+                    return '[data-fulltext*="' + elem + '"]'; }).join(QUERY_LOGIC);
                 if (filter == '*') {
                     filter = '.cbp-item';
                 }
             }
-
+            console.log(text_filter);
             if (filter !== '*') {
                 // get elements that are hidden and will be visible
                 off2onBlocks = off2onBlocks.filter(filter);
