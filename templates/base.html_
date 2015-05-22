@@ -13,6 +13,9 @@
 
 ::-moz-placeholder {  /* Firefox 19+ */ color: gray;  }
 :-ms-input-placeholder {  color: gray;  }
+
+.cbp-l-grid-projects-title2 { font-size: 12px;   line-height: 1.25em; }
+
         </style>
 	</head>
 
