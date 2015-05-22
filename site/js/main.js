@@ -1,3 +1,6 @@
+console.log('===== DEBUG ++++');
+var T, U;
+
 jQuery(document).ready(function($) {
    
    'use strict';
@@ -149,9 +152,15 @@ jQuery(document).ready(function($) {
         }
     });
 
+    function updateCount() {
+        var total = $('.cbp-item').length;
+        var hidden = $('.cbp-item-hidden').length;
+        $('#publication-count').text(total-hidden); 
+    }
+
     // add listener for filters click
     filtersContainer.on('click', '.cbp-filter-item', function (e) {
-
+        console.log('Click');
         var me = $(this), wrap;
 
         // get cubeportfolio data and check if is still animating (reposition) the items.
@@ -173,16 +182,19 @@ jQuery(document).ready(function($) {
 
         // filter the items
         var filters = $('.cbp-filter-item-active').map( function() { return $(this).data('filter'); }).toArray().join('');
-        //filters = filters.replace('*.','.').replace('.*.','.').replace('.*', '').replace('**', '*');
         if (filters == '*****') {
             filters = '*';
         } else {
             filters = filters.replace(/\*{1,}/g, '');
         }
-        console.log(filters);
-        gridContainer.cubeportfolio('filter', filters, function () {});
-    });
 
+        // We update the publication total at the top.
+        gridContainer.cubeportfolio('filter', filters, function () {
+            var total = $('.cbp-item').length;
+        var hidden = $('.cbp-item-hidden').length;
+        $('#publication-count').text(total-hidden);
+        });
+    });
     // activate counters
     gridContainer.cubeportfolio('showCounter', filtersContainer.find('.cbp-filter-item'));
 

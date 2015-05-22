@@ -1280,7 +1280,6 @@
         },
 
         _events: function() {
-
             var t = this;
 
             t.$obj.on('click' + eventNamespace, function(e) {
@@ -1311,8 +1310,6 @@
             var target = $(e.target);
 
             var index = target.index();
-
-            console.log();
 
             this.jumpTo(index - this.current);
         },
@@ -3087,7 +3084,6 @@
         _fadeOutFilter: function(on2offBlocks, off2onBlocks, filter) {
 
             var t = this;
-
             if (filter !== '*') {
 
                 // get elements that are hidden and will be visible
@@ -3212,20 +3208,37 @@
 
             var t = this;
 
-            if (filter !== '*') {
+            // We grab the text for the fulltext filter.
+            var text_filter = document.getElementById('text-filter').value;
+            if (text_filter !== '') {
+                text_filter = '[data-fulltext*="' + text_filter + '"]';
+                if (filter == '*') {
+                    filter = '.cbp-item';
+                }
+            }
 
+            if (filter !== '*') {
                 // get elements that are hidden and will be visible
                 off2onBlocks = off2onBlocks.filter(filter);
+                if (text_filter !== '') {
+                    off2onBlocks = off2onBlocks.filter(text_filter);
+                }
 
                 // get visible elements that will pe hidden
                 on2offBlocks = t.blocks.not('.cbp-item-hidden').not(filter).addClass('cbp-item-hidden');
-
-            }
+                if (text_filter !== '') {
+                    var moreBlocks = t.blocks.not('.cbp-item-hidden').not(text_filter).addClass('cbp-item-hidden');
+                  on2offBlocks = jQuery.merge(on2offBlocks, moreBlocks);
+                }
+                }
 
             // remove hidden class
             off2onBlocks.removeClass('cbp-item-hidden');
-
             t.blocksAvailable = t.blocks.filter(filter);
+            // Special case for fulltext search.
+            if (text_filter !== '') {
+                t.blocksAvailable = t.blocksAvailable.filter(text_filter);
+            }
 
             if (on2offBlocks.length) {
 
@@ -3605,7 +3618,6 @@
          * Slide Up filter
          */
         _fadeOutTopFilter: function(on2offBlocks, off2onBlocks, filter) {
-
             var t = this;
 
             t.blocksAvailable = t.blocks.filter(filter);
@@ -4792,7 +4804,6 @@
          * Filter the plugin by filterName
          */
         filter: function(filterName, callbackFunction, context) {
-
             var t = context || $.data(this, 'cubeportfolio'),
                 off2onBlocks, on2offBlocks;
 
@@ -4802,10 +4813,12 @@
 
             filterName = (filterName === '*' || filterName === '') ? '*' : filterName;
 
+// README: This optimization prevents the fulltext search from triggering.
+/*
             if (t.isAnimating || t.defaultFilter == filterName) {
                 return;
             }
-
+*/
             if (t.browser === 'ie8' || t.browser === 'ie9') {
                 t.$obj.removeClass('cbp-no-transition cbp-appendItems-loading');
             } else {

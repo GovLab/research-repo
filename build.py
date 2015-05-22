@@ -15,6 +15,13 @@ TEMPLATES_DIR = 'templates'
 
 #PUBLICATIONS = yaml.load(open('data/publications.yaml'))
 
+def fulltext_content(p):
+    content = p['title'] + ' ' + p['abstract'] + ' ' + p['authors']
+    content = content.lower()
+    content = content.replace('"', ' ')
+    content = content.replace("'", ' ')
+    return content
+
 PUBLICATIONS = []
 with open('data/publications.csv', 'rb') as csvfile:
     reader = csv.reader(csvfile)
@@ -87,6 +94,7 @@ def filterPublications(tag):
 def Main():
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR),
         extensions=['jinja2.ext.with_'])
+    env.filters['fulltext_content'] = fulltext_content
 
     for p in PUBLICATIONS:
         template = env.get_template('publication_detail.html')

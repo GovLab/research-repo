@@ -7,7 +7,12 @@
         <title>{{title}}</title>
         {% include 'header.html_' %}
         <style>
-        .navbar-custom { color: black;}
+.navbar-custom { color: black;}
+::-webkit-input-placeholder { color: gray; }
+:-moz-placeholder { /* Firefox 18- */ color: gray;  }
+
+::-moz-placeholder {  /* Firefox 19+ */ color: gray;  }
+:-ms-input-placeholder {  color: gray;  }
         </style>
 	</head>
 
