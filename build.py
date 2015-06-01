@@ -9,15 +9,21 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 from jinja2 import Environment, FileSystemLoader
-
+from stop_words import get_stop_words
 
 TEMPLATES_DIR = 'templates'
 
 #PUBLICATIONS = yaml.load(open('data/publications.yaml'))
 
+stop_words = get_stop_words('en')
+
 def fulltext_content(p):
     content = p['title'] + ' ' + p['abstract'] + ' ' + p['authors']
     content = content.lower()
+    content = content.replace(',', '').replace('.', '')
+    words = [w for w in content.split(' ') if w not in stop_words]
+    words = list(set(words))
+    content = ' '.join(words)
     content = content.replace('"', ' ')
     content = content.replace("'", ' ')
     return content
@@ -106,6 +112,7 @@ def Main():
     pages = ['index', 'about', 'topic-filter-page']
     for page in pages:
         template = env.get_template('%s.html' % page)
+        template_data['ALL'] = False  # True to make the innovation filter on.
         html = template.render(template_data)
         with open('site/%s.html' % page, 'w') as f:
             f.write(html.encode('utf8'))

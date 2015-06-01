@@ -24,6 +24,9 @@
 {%- endmacro %}
 
             <!-- PORTOLIO FILTER -->
+            {% if ALL %}
+                {{ filterWidget("Innovation", innovationFilters) }}
+            {% endif %}
             {{ filterWidget("Objective", objectiveFilters) }}
             {{ filterWidget("Sector", sectorFilters) }}
             {{ filterWidget("Region", regionFilters) }}
